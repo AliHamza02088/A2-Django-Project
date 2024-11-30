@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+</head>
+<body>
+    <h2>Edit Profile</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ form.first_name }}">
+        
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ form.last_name }}">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ form.email }}">
+        
+        <label for="password1">New Password:</label>
+        <input type="password" id="password1" name="password1">
+        
+        <label for="password2">Confirm Password:</label>
+        <input type="password" id="password2" name="password2">
+        
+        <button type="submit">Save Changes</button>
+    </form>
+    <div>{{ error }}</div>
+</body>
+</html>
+    

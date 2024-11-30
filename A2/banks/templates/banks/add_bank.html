@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=d, initial-scale=1.0">
+    <title>add_banks</title>
+</head>
+<body>
+    <h1>Add_banks</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% if errors %}
+            <ul>
+                {% for error in errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <label for="name">Name:</label>
+        <input type="text"  id="name"  name="name"><br>
+        <label for="swift_code">Swift Code:</label>
+        <input type="text"  id="swift_code" , name="swift_code"><br>
+        <label for="institution_number">Institution Number:</label>
+        <input type="text" id="institution_number" name="institution_number"><br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description"><br>
+        <input type="submit" value="Add Bank">
+    </form>
+</body>
+</html>
